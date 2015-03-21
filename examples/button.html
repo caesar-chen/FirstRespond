@@ -25,11 +25,34 @@
 </head>
 <body>
 
-<p>Pick the target boxes up with both hands and hold them steadily for 30 seconds.</p>
+<p>Push the square towards the screen as many times as you can in 20 seconds.</p>
+<p id="demo"></p>
+<span id="countdown" class="timer"></span>
 
 </body>
 
 <script>
+var seconds = 20;
+function secondPassed() {
+    var minutes = Math.round((seconds - 30)/60);
+    var remainingSeconds = seconds % 60;
+    if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds; 
+    }
+    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+    if (seconds == 0) {
+        clearInterval(countdownTimer);
+        document.getElementById('countdown').innerHTML = "Buzz Buzz";
+    } else {
+        seconds--;
+    }
+}
+ 
+var countdownTimer = setInterval('secondPassed()', 1000);
+</script>
+
+<script>
+
   'use strict';
 
   // Set up plugins
@@ -51,6 +74,8 @@
   var scene = Leap.loopController.plugins.boneHand.scene;
   var camera = Leap.loopController.plugins.boneHand.camera;
   var renderer = Leap.loopController.plugins.boneHand.renderer;
+  var count = 0;
+  //document.getElementById("demo").innerHTML = "The count is: " + count;
   camera.position.set( 0, 0.3, 0.6 );
 
   var controls = new THREE.OrbitControls( camera );
@@ -60,7 +85,7 @@
 
   // Add a plane
 
-  var planeGeo = new THREE.PlaneGeometry(0.1, 0.2);
+  var planeGeo = new THREE.PlaneGeometry(0.1, 0.1);
   var material = new THREE.MeshPhongMaterial();
   var buttonMesh = new THREE.Mesh(planeGeo, material);
 
@@ -70,6 +95,17 @@
 
 
   var longThrow = -0.1;
+  // var cube = new PushButton(
+  //   new InteractablePlane(buttonMesh, Leap.loopController),
+  //   ).on('press', function(mesh){
+
+  //   mesh.material.color.setHex(0x993300);
+
+  // }).on('release', function(mesh){
+
+  //   mesh.material.color.setHex(0xeeeeee);
+
+  // });
   var squareButton = new PushButton(
 
     new InteractablePlane(buttonMesh, Leap.loopController),
@@ -81,11 +117,13 @@
 
   ).on('press', function(mesh){
 
-    mesh.material.color.setHex(0xccccff);
+    mesh.material.color.setHex(0x993300);
+    count = count + 1;
+    document.getElementById("demo").innerHTML = "The count is: " + count;
 
   }).on('release', function(mesh){
 
-    mesh.material.color.setHex(0xeeeeee);
+    mesh.material.color.setHex(0xffffff);
 
   });
 
@@ -96,13 +134,13 @@
     },
     function(mesh){ // out
       console.log('hover out');
-      mesh.material.color.setHex(0xeeeeee);
+      mesh.material.color.setHex(0xffffff);
     }
   );
 
 
-  var base = new THREE.Mesh(new THREE.BoxGeometry(0.1, longThrow, longThrow), new THREE.MeshPhongMaterial({color: 0x222222}));
-  base.position.set(0.05, 0, -0.1);
+  var base = new THREE.Mesh(new THREE.BoxGeometry(0.1, longThrow, longThrow * 5), new THREE.MeshPhongMaterial({color: 0xffffff}));
+  base.position.set(0, 0, 0);
   base.rotateY(Math.PI * -0.15);
 
   buttonMesh.position.set(
@@ -118,6 +156,8 @@
   base.add(buttonMesh);
 
   scene.add(base);
+  // document.getElementById("demo").innerHTML = "The count is: " + count;
+  document.getElementById("demo").innerHTML = "The count is: " + count;
 
 
 </script>
