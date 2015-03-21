@@ -91,21 +91,7 @@ var countdownTimer = setInterval('secondPassed()', 1000);
 
   buttonMesh.name = "rectangular button";
 
-//  buttonMesh.scale.setY(0.5);
-
-
   var longThrow = -0.1;
-  // var cube = new PushButton(
-  //   new InteractablePlane(buttonMesh, Leap.loopController),
-  //   ).on('press', function(mesh){
-
-  //   mesh.material.color.setHex(0x993300);
-
-  // }).on('release', function(mesh){
-
-  //   mesh.material.color.setHex(0xeeeeee);
-
-  // });
   var squareButton = new PushButton(
 
     new InteractablePlane(buttonMesh, Leap.loopController),
@@ -150,13 +136,10 @@ var countdownTimer = setInterval('secondPassed()', 1000);
   );
   squareButton.plane.resetPosition(); // resets the original position, etc to the current one
 
-//  base.rotateX(Math.PI * -0.45);
-//  base.position.set(0.2,0,0.2);
 
   base.add(buttonMesh);
 
   scene.add(base);
-  // document.getElementById("demo").innerHTML = "The count is: " + count;
   document.getElementById("demo").innerHTML = "The count is: " + count;
 
 
