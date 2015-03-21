@@ -91,58 +91,56 @@ var countdownTimer = setInterval('secondPassed()', 1000);
 
   buttonMesh.name = "rectangular button";
 
-  var longThrow = -0.1;
+  var longThrow = -0.01;
   var squareButton = new PushButton(
 
     new InteractablePlane(buttonMesh, Leap.loopController),
 
     {
-      locking: false,
+      locking: true,
       longThrow: longThrow
     }
 
-  ).on('press', function(mesh){
+  ).on('blah', function(mesh){
 
     mesh.material.color.setHex(0x993300);
     count = count + 1;
     document.getElementById("demo").innerHTML = "The count is: " + count;
 
-  }).on('release', function(mesh){
+  }).on('blah', function(mesh){
 
     mesh.material.color.setHex(0xffffff);
 
   });
 
-  squareButton.plane.hover(
-    function(mesh){ // over
-      console.log('hover in');
-      mesh.material.color.setHex(0xffccff);
-    },
-    function(mesh){ // out
-      console.log('hover out');
-      mesh.material.color.setHex(0xffffff);
-    }
-  );
+ 
 
 
-  var base = new THREE.Mesh(new THREE.BoxGeometry(0.1, longThrow, longThrow * 5), new THREE.MeshPhongMaterial({color: 0xffffff}));
-  base.position.set(0, 0, 0);
-  base.rotateY(Math.PI * -0.15);
+  
 
-  buttonMesh.position.set(
-    0,
-    buttonMesh.geometry.parameters.height / 2 - longThrow / 2,
-    -longThrow / 2
-  );
-  squareButton.plane.resetPosition(); // resets the original position, etc to the current one
-
-
-  base.add(buttonMesh);
-
-  scene.add(base);
+  scene.add(buttonMesh);
   document.getElementById("demo").innerHTML = "The count is: " + count;
 
 
 </script>
-
+<?php 
+var_dump($_POST);
+?>
+<form method="post" action="examples/test2.php" id="form">
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["firstname"]; ?>' name="firstname" id="fname" placeholder="First Name" /></div>
+              <div class="6u$ 12u$(xsmall)"><input type="text" name="lastname" id="lname" placeholder="Last Name" /></div>
+              <div class="6u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Email" /></div>
+              <div class="6u 12u$(xsmall)"><input type="text" name="phonenum" id="cell" placeholder="Phone number" /></div>
+              <div class="6u 12u$(xsmall)"><input type="text" name="height" id="hei" placeholder="Height (cm)" /></div>
+              <div class="6u 12u$(xsmall)"><input type="text" name="weight" id="wei" placeholder="Weight (kg)" /></div>
+              <input type="hidden" name="testdata1" id="testdata1" value="14" placeholder="Weight (kg)" />
+              
+              <div class="12u$">
+                <ul class="actions">
+                  <li><input type="submit" value="Start Test" class="special" /></li>
+                </ul>
+              </div>
+            </div>
+          </form>
 </html>
