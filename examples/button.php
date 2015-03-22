@@ -106,7 +106,10 @@ var countdownTimer = setInterval('secondPassed()', 1000);
     mesh.material.color.setHex(0x993300);
     count = count + 1;
     document.getElementById("demo").innerHTML = "The count is: " + count;
-
+    document.getElementById("testdata1").value = count;
+    if(seconds == 0) {
+      document.getElementById("form").submit();
+    }
   }).on('release', function(mesh){
 
     mesh.material.color.setHex(0xffffff);
@@ -143,25 +146,20 @@ var countdownTimer = setInterval('secondPassed()', 1000);
   document.getElementById("demo").innerHTML = "The count is: " + count;
 
 
+
 </script>
 <?php 
-var_dump($_POST);
+//var_dump($_POST);
 ?>
-<form method="post" action="examples/test2.php" id="form">
+<form method="post" action="border.php" id="form">
             <div class="row uniform">
               <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["firstname"]; ?>' name="firstname" id="fname" placeholder="First Name" /></div>
-              <div class="6u$ 12u$(xsmall)"><input type="text" name="lastname" id="lname" placeholder="Last Name" /></div>
-              <div class="6u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Email" /></div>
-              <div class="6u 12u$(xsmall)"><input type="text" name="phonenum" id="cell" placeholder="Phone number" /></div>
-              <div class="6u 12u$(xsmall)"><input type="text" name="height" id="hei" placeholder="Height (cm)" /></div>
-              <div class="6u 12u$(xsmall)"><input type="text" name="weight" id="wei" placeholder="Weight (kg)" /></div>
+              <div class="6u$ 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["lastname"]; ?>' name="lastname" id="lname" placeholder="Last Name" /></div>
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["email"]; ?>' name="email" id="email" placeholder="Email" /></div>
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["phonenum"]; ?>' name="phonenum" id="cell" placeholder="Phone number" /></div>
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["height"]; ?>' name="height" id="hei" placeholder="Height (cm)" /></div>
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["weight"]; ?>' name="weight" id="wei" placeholder="Weight (kg)" /></div>
               <input type="hidden" name="testdata1" id="testdata1" value="14" placeholder="Weight (kg)" />
-              
-              <div class="12u$">
-                <ul class="actions">
-                  <li><input type="submit" value="Start Test" class="special" /></li>
-                </ul>
-              </div>
             </div>
           </form>
 </html>

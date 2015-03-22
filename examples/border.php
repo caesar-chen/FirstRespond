@@ -338,5 +338,25 @@ var countdownTimer = setInterval('secondPassed()', 1000);
 
 
 </script>
+<?php 
+var_dump($_POST);
+?>
+<form method="post" action="examples/border.php" id="form">
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["firstname"]; ?>' name="firstname" id="fname" placeholder="First Name" /></div>
+              <div class="6u$ 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["lastname"]; ?>' name="lastname" id="lname" placeholder="Last Name" /></div>
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["email"]; ?>' name="email" id="email" placeholder="Email" /></div>
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["phonenum"]; ?>' name="phonenum" id="cell" placeholder="Phone number" /></div>
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["height"]; ?>' name="height" id="hei" placeholder="Height (cm)" /></div>
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["weight"]; ?>' name="weight" id="wei" placeholder="Weight (kg)" /></div>
+              <input type="hidden" name="testdata1" id="testdata1" value="14" placeholder="Weight (kg)" />
+              
+              <div class="12u$">
+                <ul class="actions">
+                  <li><input type="submit" value="Start Test" class="special" /></li>
+                </ul>
+              </div>
+            </div>
+          </form>
 
 </html>
