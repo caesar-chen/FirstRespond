@@ -45,49 +45,49 @@
 
   var scene = Leap.loopController.plugins.boneHand.scene;
   var camera = Leap.loopController.plugins.boneHand.camera;
-  camera.position.set( 0, 800, 500 );
+  camera.position.set( 0, 0.3, 0.6 );
 
 
   var plane = new THREE.Mesh(
-    new THREE.PlaneGeometry(80,80),
-    new THREE.MeshPhongMaterial({wireframe: false})
+    new THREE.PlaneGeometry(0.2,0.2),
+    new THREE.MeshPhongMaterial({wireframe: true})
   );
 
 
 //  plane.scale.set(2,2,2);
   console.log(plane.scale);
-  plane.position.set(0,200,-100);
+  plane.position.set(0,0,0);
 
-  camera.lookAt( plane.position );
+  // camera.lookAt( plane.position );
 
-  var lineGeometry = new THREE.Geometry();
-  lineGeometry.vertices.push( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, 0, -300 ) );
+  // var lineGeometry = new THREE.Geometry();
+  // lineGeometry.vertices.push( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, 0, -300 ) );
 
-  var line = new THREE.Line(
-    lineGeometry,
-    new THREE.LineBasicMaterial({ color: 0x0000ff })
-  );
+  // var line = new THREE.Line(
+  //   lineGeometry,
+  //   new THREE.LineBasicMaterial({ color: 0x0000ff })
+  // );
 
-  var sphere = new THREE.Mesh(
-    new THREE.SphereGeometry(15, 32, 32),
-    new THREE.MeshPhongMaterial
-  );
+  // var sphere = new THREE.Mesh(
+  //   new THREE.SphereGeometry(15, 32, 32),
+  //   new THREE.MeshPhongMaterial
+  // );
 
   scene.add(plane);
-  scene.add(line);
-  scene.add(sphere);
+  // scene.add(line);
+  // scene.add(sphere);
 
-  var cornerSpheres = [];
-  for (var i = 0; i < 5; i++){
-    cornerSpheres[i] = new THREE.Mesh(
-      new THREE.SphereGeometry(15, 32, 32),
-      new THREE.MeshPhongMaterial
-    );
+  // var cornerSpheres = [];
+  // for (var i = 0; i < 5; i++){
+  //   cornerSpheres[i] = new THREE.Mesh(
+  //     new THREE.SphereGeometry(15, 32, 32),
+  //     new THREE.MeshPhongMaterial
+  //   );
 
-    scene.add(cornerSpheres[i]);
-  }
+  //   scene.add(cornerSpheres[i]);
+  // }
 
-  var axisHelper = new THREE.AxisHelper( 100 );
+  var axisHelper = new THREE.AxisHelper( 0.1 );
   scene.add( axisHelper );
 
   var controls = new THREE.OrbitControls( camera );
@@ -95,30 +95,30 @@
   // Set up interactions
 
 
-  Leap.loopController.on('frame', function(frame){
+  // Leap.loopController.on('frame', function(frame){
 
-    if (!frame.hands.length > 0) return;
+  //   if (!frame.hands.length > 0) return;
 
-    var hand = frame.hands[0];
-    if (!hand) return;
-    lineGeometry.vertices[0].fromArray(hand.indexFinger.tipPosition);
-    lineGeometry.vertices[1].fromArray(hand.thumb.tipPosition);
+  //   var hand = frame.hands[0];
+  //   if (!hand) return;
+  //   lineGeometry.vertices[0].fromArray(hand.indexFinger.tipPosition);
+  //   lineGeometry.vertices[1].fromArray(hand.thumb.tipPosition);
 
-    lineGeometry.verticesNeedUpdate = true;
+  //   lineGeometry.verticesNeedUpdate = true;
 
-  });
+  // });
 
 
-  // Set up application & output
+  // // Set up application & output
 
-  var proximity = Leap.loopController.watch(
-    plane,
-    function(){
-      return [
-        lineGeometry.vertices
-      ]
-    }
-  );
+  // var proximity = Leap.loopController.watch(
+  //   plane,
+  //   function(){
+  //     return [
+  //       lineGeometry.vertices
+  //     ]
+  //   }
+  // );
 
   proximity.in(function(){
     console.log('in');
@@ -130,23 +130,23 @@
     sphere.material.color.setHex(0x003304);
   });
 
-  Leap.loopController.on('frame', function(frame){
+  // Leap.loopController.on('frame', function(frame){
 
-    var points = proximity.intersectionPoints, key;
+  //   var points = proximity.intersectionPoints, key;
 
-    for (key in points){
+  //   for (key in points){
 
-      // leap.proximity doubles the function for a per-hand basis.  so we only take the first.
+  //     // leap.proximity doubles the function for a per-hand basis.  so we only take the first.
 
-      // only one sphere for now.
-      sphere.position.copy(points[key]);
+  //     // only one sphere for now.
+  //     sphere.position.copy(points[key]);
 
-      break;
+  //     break;
 
-    }
+  //   }
 
 
-  });
+  // });
 
 
 
