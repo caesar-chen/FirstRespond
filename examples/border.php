@@ -95,6 +95,7 @@ var countdownTimer = setInterval('secondPassed()', 1000);
   var camera = Leap.loopController.plugins.boneHand.camera;
   var renderer = Leap.loopController.plugins.boneHand.renderer;
   var count = 0;
+  document.getElementById("demo").innerHTML = "The count is: " + count;
   camera.position.set( 0, 0, 0.6 );
 
   var controls = new THREE.OrbitControls( camera );
@@ -371,9 +372,6 @@ var_dump($_POST);
               <input type="hidden" name="testdata1" id="testdata1" value="14" placeholder="Weight (kg)" />
               
               <div class="12u$">
-                <ul class="actions">
-                  <li><input type="submit" value="Start Test" class="special" /></li>
-                </ul>
               </div>
             </div>
           </form>
