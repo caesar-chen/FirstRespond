@@ -106,7 +106,7 @@
 					<header class="major">
 						<h2>Fill out the information</h2>
 					</header>
-					<form method="post" action="#">
+					<form method="post" action="examples/button.php">
 						<div class="row uniform">
 							<div class="6u 12u$(xsmall)"><input type="text" name="firstname" id="fname" placeholder="First Name" /></div>
 							<div class="6u$ 12u$(xsmall)"><input type="text" name="lastname" id="lname" placeholder="Last Name" /></div>
@@ -114,6 +114,8 @@
 							<div class="6u 12u$(xsmall)"><input type="text" name="phonenum" id="cell" placeholder="Phone number" /></div>
 							<div class="6u 12u$(xsmall)"><input type="text" name="height" id="hei" placeholder="Height (cm)" /></div>
 							<div class="6u 12u$(xsmall)"><input type="text" name="weight" id="wei" placeholder="Weight (kg)" /></div>
+							<input type="hidden" name="testdata1" id="testdata1" value="14" placeholder="Weight (kg)" />
+							document.getelementbyID
 							<div class="12u$">
 								<ul class="actions">
 									<li><input type="submit" value="Start Test" class="special" /></li>
