@@ -42,7 +42,7 @@
         <h2>Push the square towards the screen as many times as you can in 10 seconds.</h2>
         <p id="demo" ></p>
 <span id="countdown" style="color:red;" class="timer"></span>
-        <div class="container" style="margin-top: 2%; height: 80%;">
+        <div class="container" style="margin-top: 2%; height: 20%;">
             
         </div>
       </section>
@@ -128,7 +128,7 @@ var countdownTimer = setInterval('secondPassed()', 1000);
     mesh.material.color.setHex(0xFF6699);
 
   });
-  buttonMesh.position.set(0.12,0.12,0);
+  buttonMesh.position.set(0.1,0.08,0);
   squareButton.plane.resetPosition();
 
   //2
@@ -154,7 +154,7 @@ var countdownTimer = setInterval('secondPassed()', 1000);
     mesh2.material.color.setHex(0xFF6699);
 
   });
-  buttonMesh2.position.set(0.02,0.12,0);
+  buttonMesh2.position.set(0,0.08,0);
   squareButton2.plane.resetPosition();
 
   //3
@@ -180,7 +180,7 @@ var countdownTimer = setInterval('secondPassed()', 1000);
     mesh.material.color.setHex(0xFF6699);
 
   });
-  buttonMesh3.position.set(-0.08,0.12,0);
+  buttonMesh3.position.set(-0.1,0.08,0);
   squareButton3.plane.resetPosition();
 
   //4
