@@ -178,7 +178,7 @@ var countdownTimer = setInterval('secondPassed()', 1000);
               <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["phonenum"]; ?>' name="phonenum" id="cell" placeholder="Phone number" /></div>
               <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["height"]; ?>' name="height" id="hei" placeholder="Height (cm)" /></div>
               <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["weight"]; ?>' name="weight" id="wei" placeholder="Weight (kg)" /></div>
-              <input type="hidden" name="testdata1" id="testdata1" value="14" placeholder="Weight (kg)" />
+              <input type="hidden" name="testdata1" id="testdata1" value="0"  />
             </div>
           </form>
 </html>

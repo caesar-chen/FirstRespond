@@ -33,15 +33,16 @@ THE SOFTWARE.
 <script src = "lib/three.min.js"                                  ></script>
 <script src = "lib/stats.min.js"                                  ></script>
 
-<p>Please firm your fist, and hold the ball for 20 secs.</p>
+<p style="text-align:center; font-size: 150%;">Please firm your fist, and hold the ball for 20 secs.</p>
 <p id="demo"></p>
-<span id="countdown" class="timer"></span>
+<p id="countdown" class="timer" style="color:red; text-align:center;"></p>
  
 <script>
 
   // Global Variables for THREE.JS
   var container , camera, scene, renderer , stats;
   var holdTime = 20;
+  var isHold = true;
   // Global variable for leap
   var frame, controller;
 
@@ -106,9 +107,9 @@ THE SOFTWARE.
     container = document.createElement( 'div' );
 
     container.style.width      = '100%';
-    container.style.height     = '95%';
+    container.style.height     = '90%';
     container.style.position   = 'absolute';
-    container.style.top        = '5%';
+    container.style.top        = '10%';
     container.style.left       = '0px';
     container.style.background = '#000';
 
@@ -351,7 +352,7 @@ THE SOFTWARE.
             selectables[i].hovered = false;
             selectables[i].material = selectableNeutralMaterial;
             selectables[i].materialNeedsUpdate = true;
-            holdTime = seconds;
+
           }
         }
 
@@ -485,4 +486,30 @@ function secondPassed() {
  
 var countdownTimer = setInterval('secondPassed()', 1000);
 </script>
+<?php 
+
+$message = "Dear Doctor: \n" . $_POST['firstname'] . " " . $_POST['lastname'] . "got ". $_POST['testdata1'] . " for the test 1, got ". $_POST['testdata2'] . " for the test 2, got ". $_POST['testdata3'] . " for the test 3";
+
+
+mail('yueerchu@gmail.com','my subject', $message);
+
+
+
+?>
+<form method="post" action="thankyou.php" id="form">
+            <div class="row uniform">
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["firstname"]; ?>' name="firstname" id="fname" placeholder="First Name" /></div>
+              <div class="6u$ 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["lastname"]; ?>' name="lastname" id="lname" placeholder="Last Name" /></div>
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["email"]; ?>' name="email" id="email" placeholder="Email" /></div>
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["phonenum"]; ?>' name="phonenum" id="cell" placeholder="Phone number" /></div>
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["height"]; ?>' name="height" id="hei" placeholder="Height (cm)" /></div>
+              <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["weight"]; ?>' name="weight" id="wei" placeholder="Weight (kg)" /></div>
+              <input type="hidden" name="testdata1" id="testdata1" value='<?php echo $_POST["testdata1"]; ?>' />
+              <input type="hidden" name="testdata2" id="testdata2" value='<?php echo $_POST["testdata2"]; ?>' />
+              <input type="hidden" name="testdata3" id="testdata3" value="0"  />
+              
+              <div class="12u$">
+              </div>
+            </div>
+          </form>
 </html>
