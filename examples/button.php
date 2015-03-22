@@ -42,7 +42,7 @@ function secondPassed() {
     document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
     if (seconds == 0) {
         clearInterval(countdownTimer);
-        document.getElementById('countdown').innerHTML = "Buzz Buzz";
+        document.getElementById("form").submit();
     } else {
         seconds--;
     }
@@ -80,9 +80,6 @@ var countdownTimer = setInterval('secondPassed()', 1000);
 
   var controls = new THREE.OrbitControls( camera );
 
-  var axisHelper = new THREE.AxisHelper( 0.1 );
-  scene.add( axisHelper );
-
   // Add a plane
 
   var planeGeo = new THREE.PlaneGeometry(0.1, 0.1);
@@ -107,14 +104,15 @@ var countdownTimer = setInterval('secondPassed()', 1000);
     count = count + 1;
     document.getElementById("demo").innerHTML = "The count is: " + count;
     document.getElementById("testdata1").value = count;
-    if(seconds == 0) {
-      document.getElementById("form").submit();
-    }
+    // if(seconds == 0) {
+    //   document.getElementById("form").submit();
+    // }
   }).on('release', function(mesh){
 
     mesh.material.color.setHex(0xffffff);
 
-  });
+  }
+  );
 
   squareButton.plane.hover(
     function(mesh){ // over
@@ -143,6 +141,7 @@ var countdownTimer = setInterval('secondPassed()', 1000);
   base.add(buttonMesh);
 
   scene.add(base);
+
   document.getElementById("demo").innerHTML = "The count is: " + count;
 
 
