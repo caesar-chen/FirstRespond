@@ -8,10 +8,24 @@
   <script src="../build/leap-widgets-0.1.0.js"></script>
 
   <script src="js/OrbitControls.js"></script>
-
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.scrollex.min.js"></script>
+    <script src="js/jquery.scrolly.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+      <link rel="stylesheet" href="css/skel.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/style-xlarge.css" />
+    </noscript>
   <style>
     body {
       margin: 0;
+      background-image: url("image/pic02.jpg");
     }
     canvas.leap-boneHand{
       position: absolute;
@@ -24,8 +38,14 @@
 
 </head>
 <body>
-
-<p>Push the square towards the screen as many times as you can in 10 seconds.</p>
+<section id="one" class="main special">
+        <h2>Push the square towards the screen as many times as you can in 10 seconds.</h2>
+        <p id="demo" ></p>
+<span id="countdown" style="color:red;" class="timer"></span>
+        <div class="container" style="margin-top: 2%; height: 80%;">
+            
+        </div>
+      </section>
 <p id="demo"></p>
 <span id="countdown" class="timer"></span>
 

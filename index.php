@@ -1,9 +1,5 @@
 <!DOCTYPE HTML>
-<!--
-	Highlights by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
 		<title>Highlights by HTML5 UP</title>
@@ -21,8 +17,6 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 	</head>
 	<body>
 
@@ -52,53 +46,6 @@
 					<a href="#footer" class="goto-next scrolly">Next</a>
 				</div>
 			</section>
-
-		<!--&lt;!&ndash; Two &ndash;&gt;-->
-			<!--<section id="two" class="main special">-->
-				<!--<div class="container">-->
-					<!--<span class="image fit primary"><img src="images/pic02.jpg" alt="" /></span>-->
-					<!--<div class="content">-->
-						<!--<header class="major">-->
-							<!--<h2>Stuff I do</h2>-->
-						<!--</header>-->
-						<!--<p>Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet vulputate.</p>-->
-						<!--<ul class="icons-grid">-->
-							<!--<li>-->
-								<!--<span class="icon major fa-camera-retro"></span>-->
-								<!--<h3>Magna Etiam</h3>-->
-							<!--</li>-->
-							<!--<li>-->
-								<!--<span class="icon major fa-pencil"></span>-->
-								<!--<h3>Lorem Ipsum</h3>-->
-							<!--</li>-->
-							<!--<li>-->
-								<!--<span class="icon major fa-code"></span>-->
-								<!--<h3>Nulla Tempus</h3>-->
-							<!--</li>-->
-							<!--<li>-->
-								<!--<span class="icon major fa-coffee"></span>-->
-								<!--<h3>Sed Feugiat</h3>-->
-							<!--</li>-->
-						<!--</ul>-->
-					<!--</div>-->
-					<!--<a href="#three" class="goto-next scrolly">Next</a>-->
-				<!--</div>-->
-			<!--</section>-->
-
-		<!--&lt;!&ndash; Three &ndash;&gt;-->
-			<!--<section id="three" class="main special">-->
-				<!--<div class="container">-->
-					<!--<span class="image fit primary"><img src="images/pic03.jpg" alt="" /></span>-->
-					<!--<div class="content">-->
-						<!--<header class="major">-->
-							<!--<h2>One more thing</h2>-->
-						<!--</header>-->
-						<!--<p>Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum.</p>-->
-					<!--</div>-->
-					<!--<a href="#footer" class="goto-next scrolly">Next</a>-->
-				<!--</div>-->
-			<!--</section>-->
-
 		
 		<!-- Footer -->
 			<section id="footer">
@@ -125,13 +72,6 @@
 					</form>
 				</div>
 				<footer>
-					<ul class="icons">
-						<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon alt fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
 					<ul class="copyright">
 						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Demo Images: <a href="http://unsplash.com">Unsplash</a></li>
 					</ul>
