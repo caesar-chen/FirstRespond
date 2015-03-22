@@ -41,7 +41,23 @@
 						<header class="major">
 							<h2>Parkinson and Us</h2>
 						</header>
-						<p>Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum.</p>
+						<p>Parkinson’s disease is the most common neurodegenerative disorder that is characterized
+
+by progressive loss of muscle control, trembling, stiffness, and impaired balance of body parts. 
+
+As study shows, Parkinson’s disease is very hard to diagnose at early stage, and 40% of early 
+
+stage patients have no idea that they already have the disease.  First Response is “THE” web 
+
+application that will help you to find out your vulnerability to the Parkinson’s disease. Please fill 
+
+in your information as below, and it will provide us more information to the diagnosis. Click 
+
+start. There will be 3 tests presenting to you and please perform as instructed. Then all you have 
+
+to do is sit back and relax. We will send your results to our leading doctors to analyze. Doctor 
+
+will reach to you with an extensive report of your health condition.</p>
 					</div>
 					<a href="#footer" class="goto-next scrolly">Next</a>
 				</div>
