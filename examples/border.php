@@ -123,6 +123,8 @@ var countdownTimer = setInterval('secondPassed()', 1000);
     mesh.material.color.setHex(0xFF0033);
     count = count + 1;
     document.getElementById("demo").innerHTML = "The count is: " + count;
+    
+  document.getElementById("testdata2").value = count;
 
   }).on('release', function(mesh){
 
@@ -149,6 +151,8 @@ var countdownTimer = setInterval('secondPassed()', 1000);
     mesh2.material.color.setHex(0xFF0033);
     count = count + 1;
     document.getElementById("demo").innerHTML = "The count is: " + count;
+
+  document.getElementById("testdata2").value = count;
 
   }).on('release', function(mesh2){
 

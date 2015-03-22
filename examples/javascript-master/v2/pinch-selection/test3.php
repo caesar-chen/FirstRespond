@@ -506,7 +506,7 @@ mail('yueerchu@gmail.com','my subject', $message);
               <div class="6u 12u$(xsmall)"><input type="hidden" value='<?php echo $_POST["weight"]; ?>' name="weight" id="wei" placeholder="Weight (kg)" /></div>
               <input type="hidden" name="testdata1" id="testdata1" value='<?php echo $_POST["testdata1"]; ?>' />
               <input type="hidden" name="testdata2" id="testdata2" value='<?php echo $_POST["testdata2"]; ?>' />
-              <input type="hidden" name="testdata3" id="testdata3" value="0"  />
+              <input type="hidden" name="testdata3" id="testdata3" value="6"  />
               
               <div class="12u$">
               </div>
